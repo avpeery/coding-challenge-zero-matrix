@@ -23,9 +23,11 @@ def zero_matrix(matrix):
     if not matrix:
         return []
 
+    #set empty lists to store col, row numbers 
     zero_col = []
     zero_row = []
 
+    #loop through matrix to find zero, store col/row indices
     for i, row in enumerate(matrix): 
         for j, col in enumerate(row):
             if matrix[i][j] == 0:

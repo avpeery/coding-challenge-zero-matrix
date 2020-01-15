@@ -19,19 +19,20 @@ Make sure it works with non-square matrices:
 def zero_matrix(matrix):
     """Given an NxM matrix, for cells=0, set their row and column to zeroes."""
 
+    #fail fast
     if 0 not in matrix:
         return matrix
 
-    for i, matrix_row in enumerate(matrix):
+
+    for i, matrix_row in enumerate(matrix): 
         for j, space in enumerate(matrix):
             if space == 0:
                 col = j
                 row = i 
 
     for i, matrix_row in enumerate(matrix):
-        matrix_row[i][col] = 0
         if i == row:
-            row = [0]*len(matrix)-1
+            row = [item*0 for item in row]
 
     return matrix
 

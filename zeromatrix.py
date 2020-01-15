@@ -20,8 +20,8 @@ def zero_matrix(matrix):
     """Given an NxM matrix, for cells=0, set their row and column to zeroes."""
 
     #fail fast
-    if 0 not in matrix:
-        return matrix
+    if not matrix:
+        return []
 
     zero_col = []
     zero_row = []

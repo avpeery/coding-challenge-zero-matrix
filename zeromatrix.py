@@ -23,16 +23,21 @@ def zero_matrix(matrix):
     if 0 not in matrix:
         return matrix
 
+    zero_col = []
+    zero_row = []
 
-    for i, matrix_row in enumerate(matrix): 
-        for j, space in enumerate(matrix):
-            if space == 0:
-                col = j
-                row = i 
+    for i, row in enumerate(matrix): 
+        for j, col in enumerate(row):
+            if matrix[i][j] == 0:
+                zero_col.append(j)
+                zero_row.append(i)
 
-    for i, matrix_row in enumerate(matrix):
-        if i == row:
-            row = [item*0 for item in row]
+    for i in zero_row:
+        matrix[i] = [0] * len(matrix[0])
+
+    for i in zero_col:
+        for row in matrix:
+            row[i] = 0
 
     return matrix
 
